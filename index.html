@@ -167,6 +167,7 @@
   /* Hero visual */
   .hero-visual {
     position: relative; display: flex; justify-content: center;
+    overflow: visible;
   }
   .book-mockup {
     width: 100%; max-width: 380px;
@@ -253,12 +254,13 @@
 
   /* badge */
   .hero-badge {
-    position: absolute; top: -16px; right: 10px;
+    position: absolute; top: -14px; right: -14px;
     background: var(--amb); color: #fff;
     font-size: .72rem; font-weight: 700; letter-spacing: .04em;
-    text-transform: uppercase; padding: 6px 14px; border-radius: 100px;
+    text-transform: uppercase; padding: 6px 16px; border-radius: 100px;
     box-shadow: 0 4px 12px rgba(194,86,14,.3);
     animation: pulse-badge 2.5s ease-in-out infinite;
+    z-index: 10; white-space: nowrap;
   }
   @keyframes pulse-badge {
     0%,100% { transform: scale(1); }
@@ -451,9 +453,16 @@
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     gap: 6px;
-    background: rgba(253,250,246,.6);
-    backdrop-filter: blur(2px);
+    background: rgba(20,20,20,.45);
+    backdrop-filter: blur(3px);
     z-index: 2;
+  }
+  .product-card.available .coming-soon-overlay {
+    display: none !important;
+  }
+  .card-body {
+    position: relative;
+    z-index: 3;
   }
   .coming-soon-label {
     font-size: .78rem; font-weight: 700; letter-spacing: .08em;
@@ -909,15 +918,15 @@
 
     <!-- Product 2: COMING SOON -->
     <div class="product-card coming-soon reveal reveal-delay-2">
-      <div class="card-cover card-cover-vol2">
+      <div class="card-cover card-cover-vol2" style="position:relative;">
         <span class="card-level-badge badge-soon">Próximamente</span>
         <div class="card-cover-num">02</div>
         <div class="card-cover-title">Nivel Fácil</div>
         <div class="card-cover-sub">Etapa inicial · Estimulación suave</div>
-      </div>
-      <div class="coming-soon-overlay">
-        <span class="coming-soon-label">Próximamente</span>
-        <span class="notify-link" onclick="openModal('Vol. 02 — Nivel Fácil')">Avísame cuando salga</span>
+        <div class="coming-soon-overlay">
+          <span class="coming-soon-label">Próximamente</span>
+          <span class="notify-link" onclick="openModal('Vol. 02 — Nivel Fácil')">Avísame cuando salga</span>
+        </div>
       </div>
       <div class="card-body">
         <div class="card-tags">
@@ -941,15 +950,15 @@
 
     <!-- Product 3: COMING SOON -->
     <div class="product-card coming-soon reveal reveal-delay-3">
-      <div class="card-cover card-cover-vol3">
+      <div class="card-cover card-cover-vol3" style="position:relative;">
         <span class="card-level-badge badge-soon">Próximamente</span>
         <div class="card-cover-num">03</div>
         <div class="card-cover-title">Memoria y Lenguaje</div>
         <div class="card-cover-sub">Área cognitiva específica</div>
-      </div>
-      <div class="coming-soon-overlay">
-        <span class="coming-soon-label">Próximamente</span>
-        <span class="notify-link" onclick="openModal('Vol. 03 — Memoria y Lenguaje')">Avísame cuando salga</span>
+        <div class="coming-soon-overlay">
+          <span class="coming-soon-label">Próximamente</span>
+          <span class="notify-link" onclick="openModal('Vol. 03 — Memoria y Lenguaje')">Avísame cuando salga</span>
+        </div>
       </div>
       <div class="card-body">
         <div class="card-tags">
@@ -973,15 +982,15 @@
 
     <!-- Product 4: COMING SOON -->
     <div class="product-card coming-soon reveal reveal-delay-4">
-      <div class="card-cover card-cover-vol4">
+      <div class="card-cover card-cover-vol4" style="position:relative;">
         <span class="card-level-badge badge-soon">Próximamente</span>
         <div class="card-cover-num">04</div>
         <div class="card-cover-title">Atención y Cálculo</div>
         <div class="card-cover-sub">Área cognitiva específica</div>
-      </div>
-      <div class="coming-soon-overlay">
-        <span class="coming-soon-label">Próximamente</span>
-        <span class="notify-link" onclick="openModal('Vol. 04 — Atención y Cálculo')">Avísame cuando salga</span>
+        <div class="coming-soon-overlay">
+          <span class="coming-soon-label">Próximamente</span>
+          <span class="notify-link" onclick="openModal('Vol. 04 — Atención y Cálculo')">Avísame cuando salga</span>
+        </div>
       </div>
       <div class="card-body">
         <div class="card-tags">
